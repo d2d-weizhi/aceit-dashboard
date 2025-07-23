@@ -1,0 +1,9 @@
+lecturer_id,first_name,last_name,email,title,department,created_at
+lect_001,Sandy,Khoo,sandy.khoo@nyp.edu.sg,Senior Lecturer,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_002,Chee Hong,Tan,cheehong.tan@nyp.edu.sg,Lecturer,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_003,Priya,Sharma,priya.sharma@nyp.edu.sg,Associate Professor,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_004,Wei Ming,Lim,weiming.lim@nyp.edu.sg,Senior Lecturer,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_005,Nurul,Ibrahim,nurul.ibrahim@nyp.edu.sg,Lecturer,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_006,Raj,Patel,raj.patel@nyp.edu.sg,Senior Lecturer,School of Design & Media,2025-07-23 07:25:38.164661+00
+lect_007,Michelle,Wong,michelle.wong@nyp.edu.sg,Lecturer,School of Business Management,2025-07-23 07:25:38.164661+00
+lect_008,David,Chen,david.chen@nyp.edu.sg,Senior Lecturer,School of Information Technology,2025-07-23 07:25:38.164661+00

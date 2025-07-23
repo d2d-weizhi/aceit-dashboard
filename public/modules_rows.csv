@@ -1,0 +1,25 @@
+module_id,module_code,module_title,description,created_at,lecturer_id,semester
+mod_001,DX1101,Design Fundamentals,,2025-07-23 07:44:44.289479+00,lect_001,1
+mod_002,DX1102,Digital Media Basics,,2025-07-23 07:44:44.289479+00,lect_002,1
+mod_003,DX1103,Visual Communication I,,2025-07-23 07:44:44.289479+00,lect_003,1
+mod_004,DX1104,Typography & Layout,,2025-07-23 07:44:44.289479+00,lect_004,1
+mod_005,DX1105,Color Theory & Application,,2025-07-23 07:44:44.289479+00,lect_005,1
+mod_006,BM1201,Introduction to Marketing,,2025-07-23 07:44:44.289479+00,lect_007,1
+mod_007,DX1201,Interactive Design Principles,,2025-07-23 07:44:44.289479+00,lect_002,2
+mod_008,DX1202,Visual Communication II,,2025-07-23 07:44:44.289479+00,lect_003,2
+mod_009,DX1203,Print Media Design,,2025-07-23 07:44:44.289479+00,lect_001,2
+mod_010,DX1204,Web Design Basics,,2025-07-23 07:44:44.289479+00,lect_006,2
+mod_011,DX1205,Brand Identity Design,,2025-07-23 07:44:44.289479+00,lect_004,2
+mod_012,IT1301,Project Management Fundamentals,,2025-07-23 07:44:44.289479+00,lect_008,2
+mod_013,DX2101,UX Design Principles I,,2025-07-23 07:44:44.289479+00,lect_003,3
+mod_014,DX2102,Mobile Interface Design,,2025-07-23 07:44:44.289479+00,lect_006,3
+mod_015,DX2103,Customer Experience Design,,2025-07-23 07:44:44.289479+00,lect_001,3
+mod_016,DX2104,Prototyping & Wireframing,,2025-07-23 07:44:44.289479+00,lect_002,3
+mod_017,DX2105,Design Research Methods,,2025-07-23 07:44:44.289479+00,lect_005,3
+mod_018,IT2401,AI and Design Applications,,2025-07-23 07:44:44.289479+00,lect_008,3
+mod_019,DX2201,UX Design Principles II,,2025-07-23 07:44:44.289479+00,lect_003,4
+mod_020,DX2202,Product Design & Management,,2025-07-23 07:44:44.289479+00,lect_001,4
+mod_021,DX2203,Advanced Prototyping,,2025-07-23 07:44:44.289479+00,lect_002,4
+mod_022,DX2204,Design Portfolio Development,,2025-07-23 07:44:44.289479+00,lect_004,4
+mod_023,DX2205,User Testing & Analytics,,2025-07-23 07:44:44.289479+00,lect_005,4
+mod_024,BM2301,Digital Marketing Strategy,,2025-07-23 07:44:44.289479+00,lect_007,4
