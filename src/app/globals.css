@@ -1,24 +1,124 @@
 @import "tailwindcss";
 
+/* AceIt! Design System Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Main Color Palette */
+  --aceit-acing-green: #43A047;
+  --aceit-ocean-flow-start: #2196F3;
+  --aceit-ocean-flow-end: #1976D2;
+  --aceit-deep-focus-start: #7c3aed; /* purple-800 */
+  --aceit-deep-focus-end: #581c87;   /* purple-900 */
+  --aceit-clean-slate: #F5F7FA;
+  --aceit-midnight-text: #1F2937;
+  --aceit-victory-gold-start: #FFB74D;
+  --aceit-victory-gold-end: #FF9800;
+  
+  /* Status Colors */
+  --aceit-success: #10B981;
+  --aceit-warning: #F59E0B;
+  --aceit-error: #EF4444;
+  --aceit-info: #3B82F6;
+  
+  /* Gradients */
+  --aceit-gradient-ocean-flow: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  --aceit-gradient-deep-focus: linear-gradient(135deg, #7c3aed 0%, #581c87 100%);
+  --aceit-gradient-victory-gold: linear-gradient(135deg, #FFB74D 0%, #FF9800 100%);
+  
+  /* Typography */
+  --aceit-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Base Styles */
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Poppins", sans-serif;
+  font-family: var(--aceit-font-family);
+  line-height: 1.6;
+  color: var(--aceit-midnight-text);
+  background-color: var(--aceit-clean-slate);
+}
+
+/* Utility Classes */
+.bg-acing-green {
+  background-color: var(--aceit-acing-green);
+}
+
+.bg-clean-slate {
+  background-color: var(--aceit-clean-slate);
+}
+
+.text-acing-green {
+  color: var(--aceit-acing-green);
+}
+
+.text-midnight {
+  color: var(--aceit-midnight-text);
+}
+
+/* Gradient Classes */
+.gradient-ocean-flow {
+  background: var(--aceit-gradient-ocean-flow);
+}
+
+.gradient-deep-focus {
+  background: var(--aceit-gradient-deep-focus);
+}
+
+.gradient-victory-gold {
+  background: var(--aceit-gradient-victory-gold);
+}
+
+/* Text Gradients */
+.text-gradient-ocean-flow {
+  background: var(--aceit-gradient-ocean-flow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--aceit-gradient-ocean-flow);
+  background-clip: text;
+}
+
+.text-gradient-deep-focus {
+  background: var(--aceit-gradient-deep-focus);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-victory-gold {
+  background: var(--aceit-gradient-victory-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Status Classes */
+.bg-success { background-color: var(--aceit-success); }
+.bg-warning { background-color: var(--aceit-warning); }
+.bg-error { background-color: var(--aceit-error); }
+.bg-info { background-color: var(--aceit-info); }
+
+@theme inline {
+  --color-background: var(--aceit-clean-slate);
+  --color-foreground: var(--aceit-midnight-text);
+}
+
+.aceit-button {
+  background: var(--aceit-gradient-ocean-flow);
+  color: var(--aceit-clean-slate);
+}
+
+.aceit-button-outline {
+  background: var(--aceit-clean-slate);
+  border-color: var(--aceit-ocean-flow-start);
+  color: var(--aceit-ocean-flow-end);
+}
+
+.aceit-button-outline:hover {
+  background: var(--aceit-gradient-ocean-flow);
+  color: var(--aceit-clean-slate);
 }
