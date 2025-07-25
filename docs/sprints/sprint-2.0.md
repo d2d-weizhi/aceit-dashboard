@@ -12,6 +12,11 @@
 
 # Sprint 2.1: Laying the Foundation, Doing Things Right From the Start
 
+## Scope/Context:
+
+- Start the project slow, taking the lessons from PageBuilder and do it right.
+- Focus on the most essential files and code and my way outwards to the other related code.
+
 ## What is Accomplished Today?
 
 ### Creating necessary page layout & sections
