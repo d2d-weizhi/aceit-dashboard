@@ -67,6 +67,29 @@ src/
     └── supabase/           # Database configuration
 ```
 
+## Development Manifesto
+
+### 1. Build It "Slow"
+
+- Ever since my recent freelance work on the [Satori PageBuilder](https://dev.to/d2d_weizhi/from-user-to-builder-how-i-built-a-pagebuilder-in-5-weeks-2oif), I have discovered that by being deliberate, precise may seem slow at first, but over time, I also discovered that I have ZERO reworks. And in many cases, I only have to do something just once.
+- Doing something slow also means taking the time to understand the problem, and then breaking it down into smaller parts and tackling them with absolutely clarity.
+
+> "Building something fast doesn’t make you the best. Building it once and building it well almost guarantees you’ll be faster than the next guy, who’s stuck redoing their work again and again to get it right."
+
+### 2. Patterns are your friend, but not your prison.
+
+- What is amazing about having worked on the PageBuilder project before this is that I now have a proven, successful pattern I can replicate.
+- With a proven working pattern for my dev workflow, I don't have to crack my head on trying to figure something out from scratch.
+- Sure, in some aspects of this showcase-worthy project, I may need to adopt a slightly different pattern & workflow to suit the needs of this project (or whatever it is I am working on at that present moment).
+- Most important point: See the patterns and don't be afraid to stick with what works best.
+
+### 3. Reflect Often (Why I Actually Maintain a Meticulous Dev Log)
+
+- Now that I have experienced just how powerful and invaluable these dev logs are, I can't never go back to the way things were before.
+- It might seem like overkill for some folks, reading and seeing all of this details on my thought-processes and strategies, ideation and occasional rantings.
+- But for me, this is a roadmap, maybe even a track record, a history of everything that I have done. Recorded in real-time.
+- It also helps to keep me honest.
+
 ## Development Philosophy
 
 This project emphasizes **deliberate development** - building systematically with attention to:
@@ -79,12 +102,11 @@ This project emphasizes **deliberate development** - building systematically wit
 
 ## Current Sprint
 
-**Sprint 1.0: Foundation & Architecture** *(In Progress)*
-- ✅ Project setup and configuration
-- ✅ Component architecture planning
-- ✅ Database schema design
-- 🔄 MobX store implementation
-- 🔄 Core UI components development
+**Sprint 2.2: Assignments Module, Update DB, State Management** *(In Progress)*
+- ⏳ Add missing `tags`, `assignment_tags` and `tasks_tags` table.
+- ⏳ Populate tables with the relevant records.
+- ⏳ Start working on defining those state interfaces, objects and manager classes.
+- ⏳ Starting integrating Supabase with Front-end UI (same as working on the Assignments Page).
 
 ## Getting Started
 

@@ -11,6 +11,27 @@
 
 ---
 
+# Sprint 2.2: Assignments Module, Update DB, State Management
+
+## Scope/Context:
+
+- I want to focus on getting the Assignments page of AceIt! Dashboard implemented.
+- I want to add in the missing `tags` table and then `assignment_tags` and `task_tags`.
+- Populate the tables with relevant data.
+- Start building those state interfaces and the state managers.
+- If there is time today, link up the UI with Supabase backend.
+
+## What is Accomplished Today?
+
+- ✅ Added `tags`, `assignment_tags` and `task_tags` tables.
+- ✅ Populated the `tags` and `assignment_tags` tables with sample data.
+
+## Observations, Known Issues and Lessons
+
+## Dev Logs
+
+---
+
 # Sprint 2.1: Laying the Foundation, Doing Things Right From the Start
 
 ## Scope/Context:
@@ -22,17 +43,17 @@
 
 ### Creating necessary page layout & sections
 
-- Added `/assignments/page.tsx`
-- Added `/components/ui/sections/assignments-listing.tsx`
-- Added `/components/ui/sections/assignment-details.tsx`
-- Added `/components/ui/sections/milestones-listing.tsx`
-- Added `/components/ui/sections/feedbacks-listing.tsx`
+- ✅ Added `/assignments/page.tsx`
+- ✅ Added `/components/ui/sections/assignments-listing.tsx`
+- ✅ Added `/components/ui/sections/assignment-details.tsx`
+- ✅ Added `/components/ui/sections/milestones-listing.tsx`
+- ✅ Added `/components/ui/sections/feedbacks-listing.tsx`
 
 ### Setting up MobX Store (`AceItStore`)
 
-- Added `/stores/aceit-store.ts`
-- Added `/src/app/providers.tsx`
-- Updated `layout.tsx` with the `<StoreProvider>`.
+- ✅ Added `/stores/aceit-store.ts`
+- ✅ Added `/src/app/providers.tsx`
+- ✅ Updated `layout.tsx` with the `<StoreProvider>`.
 
 ## Observations, Known Issues and Lessons
 
