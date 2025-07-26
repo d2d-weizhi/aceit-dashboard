@@ -79,7 +79,7 @@ export interface IModule {
 	semester: number;
 
 	/** The assigned lecturer that will be teaching this module. */
-	lecturer: ILecturer;
+	lecturer?: ILecturer;
 }
 
 /**
@@ -203,7 +203,7 @@ export interface IAssignment {
 	 * Up to 3 tags can be associated with each Assignment.
 	 * See {@link ITag}. 
 	 */
-	tags: ITag[];
+	tags?: ITag[];
 }
 
 /**

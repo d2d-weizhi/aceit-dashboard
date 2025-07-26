@@ -18,13 +18,14 @@
 - I want to focus on getting the Assignments page of AceIt! Dashboard implemented.
 - I want to add in the missing `tags` table and then `assignment_tags` and `task_tags`.
 - Populate the tables with relevant data.
-- Start building those state interfaces and the state managers.
 - If there is time today, link up the UI with Supabase backend.
 
 ## What is Accomplished Today?
 
 - ✅ Added `tags`, `assignment_tags` and `task_tags` tables.
 - ✅ Populated the `tags` and `assignment_tags` tables with sample data.
+- ✅ Finished implementing state interfaces.
+- ✅ Began the early stages of linking up Supabase backend with the UI.
 
 ## Observations, Known Issues and Lessons
 
@@ -42,6 +43,10 @@
   - For example, instead of having a `IAssignmentsTags` interface, which feels redundant, we just add an array of `tags: ITag[]` to the 
     `IAssignment` interface.
   - Another example: I have chosen to add `tasks: ITask[]` to `IStudentAssignment` interface because it can be associated to the assignment and student through object association, i.e. student has many assignments, and each assignment has many tasks.
+
+- **Use only `aceItStore`:**
+  - For this showcase project, we don't need to showcase my architectural skills. There are others things to showcase.
+  - Decided to use only the `aceItStore` with proper methods and accessors to manipulate and retrieve data to-and-from the store.
 
 ---
 

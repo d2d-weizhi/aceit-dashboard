@@ -102,11 +102,11 @@ This project emphasizes **deliberate development** - building systematically wit
 
 ## Current Sprint
 
-**Sprint 2.2: Assignments Module, Update DB, State Management** *(In Progress)*
-- ⏳ Add missing `tags`, `assignment_tags` and `tasks_tags` table.
-- ⏳ Populate tables with the relevant records.
-- ⏳ Start working on defining those state interfaces, objects and manager classes.
-- ⏳ Starting integrating Supabase with Front-end UI (same as working on the Assignments Page).
+**Sprint 2.2: Assignments Module, Update DB, State Management** *(Completed)*
+- ✅ Add missing `tags`, `assignment_tags` and `tasks_tags` table.
+- ✅ Populate tables with the relevant records.
+- ✅ Start working on defining those state interfaces.
+- ✅ Starting integrating Supabase with Front-end UI (same as working on the Assignments Page).
 
 ## Getting Started
 
