@@ -30,6 +30,19 @@
 
 ## Dev Logs
 
+- Updated the `max_points` column in `assignments` table to `max_credits`.
+- Removed the `status` column from `assignments` because actual progress status will be tracked inside `student_assignments`.
+
+### Key Dev Decisions:
+
+- **Data Modeling:**
+  - Decided to model the data as interface that contains arrays of other interfaces.
+  - This allows us to opt out on some fields that may be unnecessary at runtime, this improving performance slightly.
+  - More testing will reveal if we can improve this further.
+  - For example, instead of having a `IAssignmentsTags` interface, which feels redundant, we just add an array of `tags: ITag[]` to the 
+    `IAssignment` interface.
+  - Another example: I have chosen to add `tasks: ITask[]` to `IStudentAssignment` interface because it can be associated to the assignment and student through object association, i.e. student has many assignments, and each assignment has many tasks.
+
 ---
 
 # Sprint 2.1: Laying the Foundation, Doing Things Right From the Start
