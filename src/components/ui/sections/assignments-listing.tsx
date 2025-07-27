@@ -29,6 +29,9 @@ export default function AssignmentsListing({
         </h2>
 
         {/* With our assignments array, we will map and loop over it to render the submitted & completed assignments */}
+        {studentAssignments.filter(sa => sa.status === "graded").map(stdAssignment => (
+          <AssignmentCard studentAssignment={stdAssignment} />
+        ))}
       </div>
     </div>
   );

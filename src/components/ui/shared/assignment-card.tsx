@@ -77,9 +77,11 @@ export default observer(function AssignmentCard({
           <button className="aceit-button-primary text-white px-4 py-2 rounded-lg text-sm">
             View Details
           </button>
-          <button className="aceit-button-outline px-4 py-2 rounded-lg text-sm text-blue-600 hover:text-white">
-            Go to Tasks
-          </button>
+          {studentAssignment.status === "ongoing" && (
+            <button className="aceit-button-outline px-4 py-2 rounded-lg text-sm text-blue-600 hover:text-white">
+              Go to Tasks
+            </button>
+          )}
         </div>
       </div>
     </div>

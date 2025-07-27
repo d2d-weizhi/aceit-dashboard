@@ -13,12 +13,7 @@ export default observer(function AssignmentsPage() {
 	const store = useStore();
 
 	useEffect(() => {
-		if (store.student.assignments
-			.filter(sa => sa.status === "graded").length == 0) {
-			// We backfill the assignments array with previous semester's assignments.
-			store.getAssignmentsForLastSem(store.student.studentId, store.getCurrSemester() - 1);
-			console.log("Total Assignments:", store.student.assignments.length);
-		} else return;
+		console.log("Total Assignments:", store.student.assignments.length);
 	}, []);
 
 	return (

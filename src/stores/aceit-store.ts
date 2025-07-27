@@ -182,32 +182,31 @@ export class AceItStore {
 				}
 			})
 		});
-  }
 
-	async getAssignmentsForLastSem(studentId: string, lastSemester: number) {
-		// check for back filling
-		if (this.hasBackFilled) {
-			console.log("Already back filled assignments, skipping...");
-			return;
+		// Auto-backfill check right after loading current semester
+		const gradedCount = this.student.assignments.filter(sa => sa.status === "graded").length;
+
+		console.log(`Graded assignments in semester ${semester}:`, gradedCount);
+
+		if (gradedCount == 0 && semester > 1 && !this.hasBackFilled) {
+			console.log(`No graded assignments found, backfilling from semester ${semester - 1}`);
+
+			// Store current assignments
+			const currAssignments = [...this.student.assignments];
+
+			// Load previous semester (temporarily clear array)
+			this.student.assignments = [];
+			await this.getAssignmentsFromDB(studentId, semester - 1);
+
+			const previousSemAssignments = [...this.student.assignments];
+
+			// Combine current + previous
+			this.student.assignments = [...currAssignments, ...previousSemAssignments];
+
+			this.hasBackFilled = true;
+			console.log(`Total assignments after backfill: ${this.student.assignments.length}`);
 		}
-
-		// store current assignments
-		const currentAssignments = [...this.student.assignments];
-
-		// Clear and load preview semester
-		this.student.assignments = [];
-		await this.getAssignmentsFromDB(studentId, lastSemester);
-
-		const completedPrevious = this.student.assignments;
-
-		console.log("Current Assignments:", currentAssignments.length);
-		console.log("Last Sem's Assignments:", completedPrevious.length);
-
-		// Restore current + add previous completed
-		this.student.assignments = [...currentAssignments, ...completedPrevious];
-
-		this.hasBackFilled = true;
-	}
+  }
 }
 
 let store: AceItStore | undefined;
