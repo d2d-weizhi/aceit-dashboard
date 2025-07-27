@@ -210,12 +210,12 @@ export interface IAssignment {
  * Represents each of the `student_assignments` records. But in a data modeling format, we only need the assignment and not the 
  * student's details. Students will have an array of this type.
  * 
- * @property id {@type Number} 									The unique identifier of each record.
+ * @property id {@type number} 									The unique identifier of each record.
  * @property assignment {@type IAssignment} 		A single instance of IAssignment. See {@link IAssignment}.
  * @property tasks {@type ITask[]}							@optional An array of all the tasks that have been added to this assignment.
  * 																							See {@link ITask}.
  * @property submissionDate {@type Date}				@optional The final submission deadline.
- * @property grade {@type Number}								@optional Student's final grade for this assignment.
+ * @property grade {@type number}								@optional Student's final grade for this assignment.
  * @property status {@type string}							Has one of three values: "ongoing", "submitted", "completed"
  * @property groupName {@type string}						@optional Only if this assignment is a group assignment.
  * 
@@ -229,7 +229,7 @@ export interface IAssignment {
  */
 export interface IStudentAssignment {
 	/** The unique identifier of each record. */
-	id: Number;
+	id: number;
 
 	/**
 	 * A single instance of IAssignment.
@@ -254,7 +254,7 @@ export interface IStudentAssignment {
 	 * Student's final grade for this assignment.
 	 * @optional
 	 */
-	grade?: Number;
+	grade?: number;
 
 	/**
 	 * Has one of three values: "ongoing", "submitted", "completed"
