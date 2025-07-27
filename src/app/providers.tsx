@@ -1,12 +1,15 @@
 'use client';
 
-import { createContext, useContext, ReactNode } from "react";
+import { createContext, useContext, ReactNode, useState } from "react";
 import { AceItStore, initializeStore } from "@/stores/aceit-store";
 
 const StoreContext = createContext<AceItStore | undefined>(undefined);
 
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
-	const store = initializeStore();
+	const [store] = useState(() => {
+		return initializeStore();
+	});
+
 	return (
 		<StoreContext.Provider value={store}>
 			{children}

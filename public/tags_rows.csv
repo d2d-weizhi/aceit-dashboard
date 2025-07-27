@@ -1,0 +1,16 @@
+tag_id,tag_name,tag_color,description,created_at
+tag_001,UX,#4F46E5,User Experience related work,2025-07-26 03:55:17.586401+00
+tag_002,Research,#059669,Research and analysis tasks,2025-07-26 03:55:17.586401+00
+tag_003,Design,#DC2626,Visual design and creative work,2025-07-26 03:55:17.586401+00
+tag_004,Prototype,#7C2D12,Prototyping and interactive work,2025-07-26 03:55:17.586401+00
+tag_005,Strategy,#1D4ED8,Strategic planning and business analysis,2025-07-26 03:55:17.586401+00
+tag_006,Team,#9333EA,Collaborative team projects,2025-07-26 03:55:17.586401+00
+tag_007,Individual,#0891B2,Solo assignments,2025-07-26 03:55:17.586401+00
+tag_008,Presentation,#EA580C,Presentation and communication,2025-07-26 03:55:17.586401+00
+tag_009,Portfolio,#BE185D,Portfolio development,2025-07-26 03:55:17.586401+00
+tag_010,Testing,#15803D,User testing and validation,2025-07-26 03:55:17.586401+00
+tag_011,Documentation,#374151,Writing and documentation,2025-07-26 03:55:17.586401+00
+tag_012,Branding,#7C2D12,Brand identity and visual systems,2025-07-26 03:55:17.586401+00
+tag_013,Mobile,#0F172A,Mobile app design,2025-07-26 03:55:17.586401+00
+tag_014,Web,#1E40AF,Web design and development,2025-07-26 03:55:17.586401+00
+tag_015,High Priority,#EF4444,Urgent or high-priority items,2025-07-26 03:55:17.586401+00

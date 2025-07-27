@@ -110,7 +110,6 @@ export default function AssignmentDetails({
               <input
                 type="checkbox"
                 className="h-4 w-4 text-blue-600 rounded mr-3"
-                checked={true}
               />
               <span className="text-sm line-through text-gray-400">
                 Platform selection analysis

@@ -1,6 +1,30 @@
+"use client";
+import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { useStore } from "./providers";
 import Image from "next/image";
 
-export default function Home() {
+export default observer(function Home() {
+
+  const store = useStore();
+
+  useEffect(() => {
+    const loadInitialData = async () => {
+      // Only fetch if we haven't loaded assignments yet.
+      if (store.student.assignments.length === 0) {
+        try {
+          // Current semester for Weiling
+          await store.getAssignmentsFromDB("std_001", 4);
+          console.log("Assignments loaded:", store.student.assignments.length);
+        } catch (error) {
+          console.error("Failed to load assignments:", error);
+        }
+      }
+    };
+
+    loadInitialData();
+  }, []);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -100,4 +124,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+});

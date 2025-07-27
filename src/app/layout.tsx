@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { StoreProvider } from "./providers";
 import "./globals.css";
 
@@ -29,7 +30,7 @@ export default function RootLayout({
 
                   <nav className="md:flex space-x-6">
                     <a href="#" className="nav-link text-gray-600 hover:text-gray-900 px-2 py-1">Home</a>
-                    <a href="/assignments/" className="nav-link active text-gray-800 hover:text-gray-900 px-2 py-1">Assignments</a>
+                    <Link href="/assignments/" className="nav-link active text-gray-800 hover:text-gray-900 px-2 py-1">Assignments</Link>
                     <a href="#" className="nav-link text-gray-600 hover:text-gray-900 px-2 py-1">Tasks</a>
                     <a href="#" className="nav-link text-gray-600 hover:text-gray-900 px-2 py-1">Calendar</a>
                     <a href="#" className="nav-link text-gray-600 hover:text-gray-900 px-2 py-1">Ace.AI</a>

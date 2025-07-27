@@ -1,10 +1,14 @@
+import { IStudentAssignment } from "@/stores/state-interfaces";
+import AssignmentCard from "../shared/assignment-card";
+
 interface IAssignmentsListingProps {
-  student_id: string;
+  studentAssignments: IStudentAssignment[];
 }
 
 export default function AssignmentsListing({
-  student_id,
+  studentAssignments,
 }: IAssignmentsListingProps) {
+
   return (
     <div className="lg:col-span-2">
       <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
@@ -13,6 +17,9 @@ export default function AssignmentsListing({
         </h2>
 
         {/* With our assignments array, we will map and loop over it to render the on-going assignments */}
+        {studentAssignments.filter(sa => sa.status === "ongoing").map(stdAssignment => (
+          <AssignmentCard studentAssignment={stdAssignment} />
+        ))}
       </div>
 
       {/* Submitted and Completed Assignments */}

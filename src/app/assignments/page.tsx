@@ -1,18 +1,25 @@
 "use client";
 
+import { observer } from "mobx-react-lite";
 import AssignmentsListing from "@/components/ui/sections/assignments-listing";
 import AssignmentDetails from "@/components/ui/sections/assignment-details";
 import MilestonesListing from "@/components/ui/sections/milestones-listing";
 import FeedbacksListing from "@/components/ui/sections/feedbacks-listing";
 import { useStore } from "../providers";
 import { IStudentAssignment } from "@/stores/state-interfaces";
+import { useEffect } from "react";
 
-interface IAssignmmentsPage {
-	student_id: string;
-}
-
-export default function AssignmentsPage({ student_id = "std_001" }: IAssignmmentsPage) {
+export default observer(function AssignmentsPage() {
 	const store = useStore();
+
+	useEffect(() => {
+		if (store.student.assignments
+			.filter(sa => sa.status === "graded").length == 0) {
+			// We backfill the assignments array with previous semester's assignments.
+			store.getAssignmentsForLastSem(store.student.studentId, store.getCurrSemester() - 1);
+			console.log("Total Assignments:", store.student.assignments.length);
+		} else return;
+	}, []);
 
 	return (
 		<>
@@ -29,17 +36,7 @@ export default function AssignmentsPage({ student_id = "std_001" }: IAssignmment
 				</nav>
 			</div>
 			<div className="flex justify-between items-center mb-6">
-				<h1 className="text-2xl font-bold text-gray-800"
-					onClick={() =>  {
-						if (store.student.assignments.length > 0) {
-							store.student.assignments.map(studentAssignment => {
-								console.log("Module:", studentAssignment.assignment.module.moduleCode, " Title:", studentAssignment.assignment.title);
-							});
-						} else {
-							store.getAssignmentsFromDB(student_id);
-						}
-					}}
-				>My Assignments</h1>
+				<h1 className="text-2xl font-bold text-gray-800">My Assignments</h1>
 				<div>
 					<button
 						className="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded-lg text-sm mr-2 hover:bg-gray-50">
@@ -69,7 +66,7 @@ export default function AssignmentsPage({ student_id = "std_001" }: IAssignmment
 				<div className="lg:col-span-2">
 
 					{/* Assignments Listing */}
-					<AssignmentsListing student_id={student_id} />
+					<AssignmentsListing studentAssignments={store.student.assignments} />
 
 				</div>
 				<div className="lg:col-span-1">
@@ -78,13 +75,13 @@ export default function AssignmentsPage({ student_id = "std_001" }: IAssignmment
 					<AssignmentDetails assignment_id="asn21" />
 
 					{/* Milestones Listing */}
-					<MilestonesListing student_id={student_id} />
+					<MilestonesListing student_id={store.student.studentId} />
 
 					{/* Feedbacks Listing */}
-					<FeedbacksListing student_id={student_id} />
+					<FeedbacksListing student_id={store.student.studentId} />
 
 				</div>
 			</div>
 		</>
 	);
-}
+});

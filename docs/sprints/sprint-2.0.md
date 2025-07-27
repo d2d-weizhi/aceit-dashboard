@@ -25,9 +25,25 @@
 
 ## What is Accomplished Today?
 
+- ✅ Integrate the Assignments Tags retrieval.
+- ✅ Set the data retrieval to `/app/page.tsx`.
+- 
+
 ## Observations, Known Issues and Lessons
 
+- **`<a></a>` Links & MobX State:**
+  - Turns out, we have to beware of using those navigation methods.
+  - Switch to the `<Link />` navigation method from `next/link`.
+- **Missing Assignment for Weiling:**
+  - While testing the `getAssignmentsForLastSem()` function, I've realized that I didn't populate `student_assignments` with `asn_017` which is also a group assignment.
+  - I should seed the relevant records in the future when I have the time.
+
+
 ## Dev Logs
+
+- I have chosen to use the lazy-loading architectural approach for data manipulation.
+- We load all the necessary data at once when a student logs in. (Dashboard Home mounts the first time)
+- With each page the student navigates to, we then lazy load any additional data that is needed for rendering.
 
 ---
 
