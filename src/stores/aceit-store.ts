@@ -6,6 +6,8 @@ export class AceItStore {
   private supabase = createClient();
 	public instanceId = Math.random().toString(36).substr(2, 9);
 
+	hasBackFilled: boolean = false;
+
 	constructor() {
 		makeObservable(this, {
 			student: observable,
@@ -183,6 +185,12 @@ export class AceItStore {
   }
 
 	async getAssignmentsForLastSem(studentId: string, lastSemester: number) {
+		// check for back filling
+		if (this.hasBackFilled) {
+			console.log("Already back filled assignments, skipping...");
+			return;
+		}
+
 		// store current assignments
 		const currentAssignments = [...this.student.assignments];
 
@@ -192,10 +200,13 @@ export class AceItStore {
 
 		const completedPrevious = this.student.assignments;
 
+		console.log("Current Assignments:", currentAssignments.length);
 		console.log("Last Sem's Assignments:", completedPrevious.length);
 
 		// Restore current + add previous completed
 		this.student.assignments = [...currentAssignments, ...completedPrevious];
+
+		this.hasBackFilled = true;
 	}
 }
 
