@@ -11,6 +11,26 @@
 
 ---
 
+# Sprint 2.3：Assignments Module (Dynamic UI Magic Starts Today)
+
+## Scope/Context:
+
+- Integrate the Assignments Tags retrieval.
+- How to retrieve data once on load?
+- Begin building out th dynamic UI sections:
+  - Copy the UI code from mock-up.
+  - Ensure each component has proper props interface
+  - Add in the mapping
+- Ensure all JSDocs have been properly added and are clear.
+
+## What is Accomplished Today?
+
+## Observations, Known Issues and Lessons
+
+## Dev Logs
+
+---
+
 # Sprint 2.2: Assignments Module, Update DB, State Management
 
 ## Scope/Context:
