@@ -102,11 +102,14 @@ This project emphasizes **deliberate development** - building systematically wit
 
 ## Current Sprint
 
-**Sprint 2.2: Assignments Module, Update DB, State Management** *(Completed)*
-- ✅ Add missing `tags`, `assignment_tags` and `tasks_tags` table.
-- ✅ Populate tables with the relevant records.
-- ✅ Start working on defining those state interfaces.
-- ✅ Starting integrating Supabase with Front-end UI (same as working on the Assignments Page).
+**Sprint 2.3: Assignments Module (Dynamic UI Magic Starts Today)** *(In-Progress)*
+- ⏳ Integrate the Assignments Tags retrieval.
+- ⏳ How to retrieve data once on loading.
+- ⏳ Begin building out the dynamic UI sections.
+  - Copy the UI code from mock-up.
+  - Ensure each component has the necessary props interfaces.
+  - Add in the mapping.
+- ⏳ Ensure proper JSDocs have been added and are clearly written.
 
 ## Getting Started
 
