@@ -32,3 +32,11 @@ export function convertGradeToLetter(numericGrade: number): { letter: string, co
   } else
     return { letter: "F", color: "text-red-600" };
 }
+
+export function formatAssignmentDateForDisplay(date:Date): string {
+  return date.toLocaleDateString("en-SG", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  });
+}

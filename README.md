@@ -102,14 +102,11 @@ This project emphasizes **deliberate development** - building systematically wit
 
 ## Current Sprint
 
-**Sprint 2.3: Assignments Module (Dynamic UI Magic Starts Today)** *(In-Progress)*
-- ⏳ Integrate the Assignments Tags retrieval.
-- ⏳ How to retrieve data once on loading.
-- ⏳ Begin building out the dynamic UI sections.
-  - Copy the UI code from mock-up.
-  - Ensure each component has the necessary props interfaces.
-  - Add in the mapping.
-- ⏳ Ensure proper JSDocs have been added and are clearly written.
+**Sprint 2.3: Assignments Module (Dynamic UI Magic Starts Today)** *(Completed)*
+- ✅ Integrate the Assignments Tags retrieval.
+- ✅ Set the data retrieval to `/app/page.tsx`.
+- ✅ `AssignmentCard` is nearly completed. Left team members rendering for group assignments.
+- ✅ Added some helper functions as well for rendering and displaying content in the right format.
 
 ## Getting Started
 

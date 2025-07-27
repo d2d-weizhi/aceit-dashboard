@@ -1,7 +1,8 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "@/app/providers";
 import { IStudentAssignment } from "@/stores/state-interfaces";
-import { convertGradeToLetter, formatDueDate } from "@/lib/helper";
+import { convertGradeToLetter, formatAssignmentDateForDisplay, formatDueDate } from "@/lib/helper";
+import { useState, useEffect } from "react";
 
 interface IAssignmentCardProps {
   studentAssignment: IStudentAssignment;
@@ -10,6 +11,18 @@ interface IAssignmentCardProps {
 export default observer(function AssignmentCard({
   studentAssignment,
 }: IAssignmentCardProps) {
+  const store = useStore();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    async function getProgress(assignmentId: string) {
+      const Aprogress = await store.getAssignmentProgress(assignmentId);
+      setProgress(Aprogress);
+    }
+
+    getProgress(studentAssignment.assignment.assignmentId);
+  }, []);
+
   return (
     <div className="assignment-card bg-white border border-gray-200 rounded-lg p-5 mb-4">
       <div className="flex justify-between items-start mb-3">
@@ -55,20 +68,41 @@ export default observer(function AssignmentCard({
       <p className="text-gray-600 text-sm mb-4">
         {studentAssignment.assignment.description}
       </p>
-      <div className="mb-4">
-        <div className="flex justify-between text-sm mb-1">
-          <span className="text-gray-600">Progress</span>
-          <span className="font-medium">40%</span>
+      {studentAssignment.status === "ongoing" && (
+        <div className="mb-4">
+          <div className="flex justify-between text-sm mb-1">
+            <span className="text-gray-600">Progress</span>
+            <span className="font-medium">{Math.floor(progress)}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2.5">
+            <div
+              className="progress-bar"
+              style={{
+                backgroundColor: "var(--aceit-gradient-ocean-flow)",
+                width: `${Math.floor(progress)}%`,
+              }}
+            ></div>
+          </div>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5">
-          <div
-            className="progress-bar"
-            style={{
-              width: `40%`,
-            }}
-          ></div>
+      )}
+
+      {studentAssignment.status === "submitted" && (
+        <div className="mb-4">
+          <div className="flex justify-between text-sm mb-1">
+            <span className="text-gray-600">Progress</span>
+            <span className="font-medium">40%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2.5">
+            <div
+              className="progress-bar bg-yello-400"
+              style={{
+                width: `100%`,
+              }}
+            ></div>
+          </div>
         </div>
-      </div>
+      )}
+        
       <div className="flex justify-between items-center">
         {/* We use isGroup here for conditional rendering */}
         {studentAssignment.assignment.isGroup && studentAssignment.status !== "graded" ? (
@@ -96,7 +130,9 @@ export default observer(function AssignmentCard({
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
                     clipRule="evenodd"></path>
                 </svg>
-                <span className="text-sm text-gray-500">Completed on May 18, 2023</span>
+                <span className="text-sm text-gray-500">
+                  Completed on {formatAssignmentDateForDisplay(studentAssignment.submissionDate || studentAssignment.assignment.dueDate)}
+                </span>
               </>
             )}
 
@@ -108,7 +144,9 @@ export default observer(function AssignmentCard({
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
                     clipRule="evenodd"></path>
                 </svg>
-                <span className="text-sm text-gray-500">Submitted on May 18, 2023</span>
+                <span className="text-sm text-gray-500">
+                  Submitted on {formatAssignmentDateForDisplay(studentAssignment.submissionDate || studentAssignment.assignment.dueDate)}
+                </span>
               </>
             )}
 
@@ -126,7 +164,9 @@ export default observer(function AssignmentCard({
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span className="text-sm text-gray-500">May 18, 2023</span>
+                <span className="text-sm text-gray-500">
+                  {formatAssignmentDateForDisplay(studentAssignment.assignment.dueDate)}
+                </span>
               </>
             )}
           </div>

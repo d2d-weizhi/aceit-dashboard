@@ -207,6 +207,24 @@ export class AceItStore {
 			console.log(`Total assignments after backfill: ${this.student.assignments.length}`);
 		}
   }
+
+	async getAssignmentProgress(assignmentId: string) {
+		const { data: tasksData, error: tasksError } = await this.supabase
+      .from('tasks')
+      .select(`
+				task_id,
+				status
+      `)
+			.eq('assignment_id', assignmentId);
+
+		if (tasksError) {
+			throw new Error(`Failed to fetch tasks: ${tasksError.message}`);
+		}
+
+		const completedCount = tasksData.filter(task => task.status === "completed").length;
+
+		return (completedCount / tasksData.length) * 100;
+	}
 }
 
 let store: AceItStore | undefined;

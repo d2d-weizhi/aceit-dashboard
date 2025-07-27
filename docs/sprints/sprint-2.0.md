@@ -21,13 +21,13 @@
   - Copy the UI code from mock-up.
   - Ensure each component has proper props interface
   - Add in the mapping
-- Ensure all JSDocs have been properly added and are clear.
 
 ## What is Accomplished Today?
 
 - ✅ Integrate the Assignments Tags retrieval.
 - ✅ Set the data retrieval to `/app/page.tsx`.
-- 
+- ✅ `AssignmentCard` is nearly completed. Left team members rendering for group assignments.
+- ✅ Added some helper functions as well for rendering and displaying content in the right format.
 
 ## Observations, Known Issues and Lessons
 
@@ -38,12 +38,17 @@
   - While testing the `getAssignmentsForLastSem()` function, I've realized that I didn't populate `student_assignments` with `asn_017` which is also a group assignment.
   - I should seed the relevant records in the future when I have the time.
 
-
 ## Dev Logs
 
 - I have chosen to use the lazy-loading architectural approach for data manipulation.
 - We load all the necessary data at once when a student logs in. (Dashboard Home mounts the first time)
 - With each page the student navigates to, we then lazy load any additional data that is needed for rendering.
+- For completed assignments, if student has no completed or submitted assignments for current semester, we will backfill it with the previous semester's assignments. So there is no empty space.
+- Managed to replicate the different aspects of the Assignment Card UI over to this project.
+- Conditional rendering for the "time left to due date" display.
+- Also added conditional rendering for the `isGroup` flag.
+- Conditionally rendered the due date according to the assignment's status.
+- Made the progress bar dynamic by querying the `tasks` table and calculating the completed tasks against the total number of tasks.
 
 ---
 
